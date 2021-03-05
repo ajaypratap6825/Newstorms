@@ -1,137 +1,82 @@
 package com.example.projects.newstorms.Models;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+
 public class LocationMapObject {
-    Double lat, lon,  temp, feels_like, temp_max, temp_min, pressure, humidity, visibility,
-            speed, all;
-    String main, country, name;
-    Long  sunrise, sunset;
 
-    public LocationMapObject() {
+    @SerializedName("coord")
+    public Coord coord;
+    @SerializedName("weather")
+    public ArrayList<Weather> weather = new ArrayList<Weather>();
+    @SerializedName("main")
+    public Main main;
+    @SerializedName("visibility")
+    public int visibility;
+    @SerializedName("wind")
+    public Wind wind;
+    @SerializedName("dt")
+    public long dt;
+    @SerializedName("sys")
+    public Sys sys;
+    @SerializedName("name")
+    public String name;
+
+    public Coord getCoord() {
+        return coord;
     }
 
-    public LocationMapObject(Double lat, Double lon, Double temp, Double feels_like, Double temp_max, Double temp_min, Double pressure,
-                             Double humidity, Double visibility, Double speed, Double all, String main, String country, String name,
-                             Long sunrise, Long sunset) {
-        this.lat = lat;
-        this.lon = lon;
-        this.temp = temp;
-        this.feels_like = feels_like;
-        this.temp_max = temp_max;
-        this.temp_min = temp_min;
-        this.pressure = pressure;
-        this.humidity = humidity;
-        this.visibility = visibility;
-        this.speed = speed;
-        this.all = all;
-        this.main = main;
-        this.country = country;
-        this.name = name;
-        this.sunrise = sunrise;
-        this.sunset = sunset;
+    public void setCoord(Coord coord) {
+        this.coord = coord;
     }
 
-    public Double getLat() {
-        return lat;
+    public ArrayList<Weather> getWeather() {
+        return weather;
     }
 
-    public void setLat(Double lat) {
-        this.lat = lat;
+    public void setWeather(ArrayList<Weather> weather) {
+        this.weather = weather;
     }
 
-    public Double getLon() {
-        return lon;
-    }
-
-    public void setLon(Double lon) {
-        this.lon = lon;
-    }
-
-    public Double getTemp() {
-        return temp;
-    }
-
-    public void setTemp(Double temp) {
-        this.temp = temp;
-    }
-
-    public Double getFeels_like() {
-        return feels_like;
-    }
-
-    public void setFeels_like(Double feels_like) {
-        this.feels_like = feels_like;
-    }
-
-    public Double getTemp_max() {
-        return temp_max;
-    }
-
-    public void setTemp_max(Double temp_max) {
-        this.temp_max = temp_max;
-    }
-
-    public Double getTemp_min() {
-        return temp_min;
-    }
-
-    public void setTemp_min(Double temp_min) {
-        this.temp_min = temp_min;
-    }
-
-    public Double getPressure() {
-        return pressure;
-    }
-
-    public void setPressure(Double pressure) {
-        this.pressure = pressure;
-    }
-
-    public Double getHumidity() {
-        return humidity;
-    }
-
-    public void setHumidity(Double humidity) {
-        this.humidity = humidity;
-    }
-
-    public Double getVisibility() {
-        return visibility;
-    }
-
-    public void setVisibility(Double visibility) {
-        this.visibility = visibility;
-    }
-
-    public Double getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(Double speed) {
-        this.speed = speed;
-    }
-
-    public Double getAll() {
-        return all;
-    }
-
-    public void setAll(Double all) {
-        this.all = all;
-    }
-
-    public String getMain() {
+    public Main getMain() {
         return main;
     }
 
-    public void setMain(String main) {
+    public void setMain(Main main) {
         this.main = main;
     }
 
-    public String getCountry() {
-        return country;
+    public int getVisibility() {
+        return visibility;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setVisibility(int visibility) {
+        this.visibility = visibility;
+    }
+
+    public Wind getWind() {
+        return wind;
+    }
+
+    public void setWind(Wind wind) {
+        this.wind = wind;
+    }
+
+    public long getDt() {
+        return dt;
+    }
+
+    public void setDt(long dt) {
+        this.dt = dt;
+    }
+
+    public Sys getSys() {
+        return sys;
+    }
+
+    public void setSys(Sys sys) {
+        this.sys = sys;
     }
 
     public String getName() {
@@ -140,21 +85,5 @@ public class LocationMapObject {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Long getSunrise() {
-        return sunrise;
-    }
-
-    public void setSunrise(Long sunrise) {
-        this.sunrise = sunrise;
-    }
-
-    public Long getSunset() {
-        return sunset;
-    }
-
-    public void setSunset(Long sunset) {
-        this.sunset = sunset;
     }
 }
